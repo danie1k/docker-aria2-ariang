@@ -1,6 +1,6 @@
 FROM fanningert/baseimage-alpine
 
-MAINTAINER kingedgar <kingedgar@gmail.com>
+LABEL maintainer="kingedgar@gmail.com"
 RUN apk update && \
 	apk add --no-cache --update bash && \
 	apk add --no-cache --update aria2
