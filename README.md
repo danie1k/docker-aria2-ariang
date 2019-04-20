@@ -11,13 +11,13 @@ sudo docker run -d \
 -v /CONFIG_DIR:/conf \
 -v /DOWNLOAD_DIR:=/download \
 -e SECRET=YOUR_SECRET_CODE \
--e PGID=911 \
--e PUID=911 \
-fanningert/aria2-daemon
+-e PGID=1002 \
+-e PUID=1000 \
+kingedgar/aria2-daemon
 ```
 
 ### Build:  
-`sudo docker build -f Dockerfile -t fanningert/aria2-daemon .`  
+`sudo docker build -f Dockerfile -t kingedgar/aria2-daemon .`  
 
 ### Link:  
 https://github.com/aria2/aria2  
