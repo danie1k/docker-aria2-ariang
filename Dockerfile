@@ -1,7 +1,6 @@
 FROM fanningert/baseimage-alpine
 
-MAINTAINER fanningert <thomas@fanninger.at>
-
+MAINTAINER kingedgar <kingedgar@gmail.com>
 RUN apk update && \
 	apk add --no-cache --update bash && \
 	apk add --no-cache --update aria2
