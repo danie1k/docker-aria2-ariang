@@ -19,4 +19,5 @@ RUN chmod -v +x /etc/services.d/*/run /etc/cont-init.d/*
 
 VOLUME ["/download"]
 VOLUME ["/conf"]
+VOLUME ["/finsihed"]
 EXPOSE 6800
