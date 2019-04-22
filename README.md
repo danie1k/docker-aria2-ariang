@@ -10,7 +10,6 @@ sudo docker run -d \
 -p 6800:6800 \
 -v /CONFIG_DIR:/conf \
 -v /DOWNLOAD_DIR:=/download \
--v /FINISHED_DIR:=/finished \
 -e SECRET=YOUR_SECRET_CODE \
 -e PGID=1002 \
 -e PUID=1000 \
