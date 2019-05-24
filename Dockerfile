@@ -1,4 +1,4 @@
-FROM fanningert/baseimage-alpine
+FROM kingedgar/baseimage-alpine
 
 LABEL maintainer="kingedgar@gmail.com"
 RUN apk update && \
