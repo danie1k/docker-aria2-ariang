@@ -1,5 +1,5 @@
 #!/bin/sh
-file=/conf/rss_memory.txt
+file=/config/rss_memory.txt
 
 if [ ! -e "$file" ] ; then
   touch $file
@@ -21,4 +21,4 @@ while read p; do
     done
     sleep 2
   fi
-done </conf/rss_feeds.txt
+done </config/rss_feeds.txt
