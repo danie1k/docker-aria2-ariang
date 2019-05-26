@@ -13,11 +13,11 @@ sudo docker run -d \
 -e SECRET=YOUR_SECRET_CODE \
 -e PGID=1002 \
 -e PUID=1000 \
-kingedgar/aria2-daemon
+kingedgar/aria2-daemon:latest
 ```
 
 ### Build:  
-`sudo docker build -f Dockerfile -t kingedgar/aria2-daemon .`  
+`sudo docker build -f Dockerfile -t kingedgar/aria2-daemon:latest`  
 
 ### Link:  
 https://github.com/aria2/aria2  
