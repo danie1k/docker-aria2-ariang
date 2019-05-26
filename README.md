@@ -8,7 +8,7 @@ I. replace **/DOWNLOAD_DIR** and **/CONFIG_DIR** for save data, and **YOUR_SECRE
 sudo docker run -d \
 --name aria2-daemon \
 -p 6800:6800 \
--v /CONFIG_DIR:/conf \
+-v /CONFIG_DIR:/config \
 -v /DOWNLOAD_DIR:=/download \
 -e SECRET=YOUR_SECRET_CODE \
 -e PGID=1002 \
