@@ -1,4 +1,3 @@
-#!/usr/bin/with-contenv bash
+#!/usr/bin/with-contenv sh
 
-export HOME="~app"
-exec s6-setuidgid app "/config/start.sh"
+exec s6-setuidgid abc aria2c --conf-path=/config/aria2.conf

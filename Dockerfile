@@ -1,22 +1,30 @@
-FROM kingedgar/baseimage-alpine
+# https://github.com/linuxserver/docker-baseimage-alpine
+FROM ghcr.io/linuxserver/baseimage-alpine:3.14
 
-LABEL maintainer="kingedgar@gmail.com"
-RUN apk update && \
-	apk add --no-cache --update bash && \
-	apk add --no-cache --update aria2
+ARG ARIANG_VERSION="1.2.2"
+ARG DOCKERIZE_VERSION="v0.6.1"
+WORKDIR /tmp/
 
-RUN apk --update add \
-  ca-certificates \
-  ruby \
-  ruby-bundler \
-  ruby-xmlrpc \
-  ruby-dev && \
-  rm -fr /usr/share/ri
+RUN set -ex \
+ && apk -U upgrade \
+ && apk add --no-cache --update \
+    bash curl coreutils \
+    aria2 \
+    ruby ruby-bundler ruby-xmlrpc ruby-dev \
+    darkhttpd \
+### AriaNG
+ && curl -o ariang.zip -L "https://github.com/mayswind/AriaNg/releases/download/${ARIANG_VERSION}/AriaNg-${ARIANG_VERSION}.zip" \
+ && mkdir /ariang && unzip -d /ariang ariang.zip \
+### Dockerize
+ && curl -o dockerize.tar.gz -L "https://github.com/jwilder/dockerize/releases/download/${DOCKERIZE_VERSION}/dockerize-alpine-linux-amd64-${DOCKERIZE_VERSION}.tar.gz" \
+ && tar -C /usr/local/bin -xzf dockerize.tar.gz && chmod +x /usr/local/bin/dockerize \
+### Cleanup
+ && rm -rf /usr/share/ri /var/cache/apk/* /tmp/*
 
-ADD root/ /
+WORKDIR /
+COPY ./root/ /
 
-RUN chmod -v +x /etc/services.d/*/run /etc/cont-init.d/*
+EXPOSE 6800 8080
+VOLUME /download /config
 
-VOLUME ["/download"]
-VOLUME ["/config"]
-EXPOSE 6800
+RUN ["/init"]
