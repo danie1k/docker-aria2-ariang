@@ -13,12 +13,13 @@ Container can be configured using environment variables passed at runtime.
 
 ### Container Parameters
 
-| Variable Name | Description                          |
-| ------------- | ------------------------------------ |
-| `PUID`        | User ID - see below for explanation  |
-| `PGID`        | Group ID - see below for explanation |
-| `TZ`          | A timezone to use                    |
-| `UMASK`       | Umask for running applications       |
+| Variable Name | Description                                                        |
+| ------------- | ------------------------------------------------------------------ |
+| `AUTH`        | Basic HTTP auth for AriaNG `username:password`, no auth by default |
+| `PUID`        | User ID - see below for explanation                                |
+| `PGID`        | Group ID - see below for explanation                               |
+| `TZ`          | A timezone to use                                                  |
+| `UMASK`       | Umask for running applications                                     |
 
 ### Aria2 Parameters
 

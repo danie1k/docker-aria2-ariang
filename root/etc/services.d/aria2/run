@@ -1,3 +1,7 @@
 #!/usr/bin/with-contenv sh
 
-exec s6-setuidgid abc aria2c --conf-path=/config/aria2.conf
+if [ -n "${AUTH}"]; then
+  auth="--auth ${AUTH}"
+fi
+
+exec s6-setuidgid abc aria2c --conf-path=/config/aria2.conf ${auth}
