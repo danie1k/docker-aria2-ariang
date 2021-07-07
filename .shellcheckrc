@@ -1,0 +1,5 @@
+# https://github.com/koalaman/shellcheck/blob/master/shellcheck.1.md#rc-files
+color=auto
+enable=all
+severity=warning
+shell=bash

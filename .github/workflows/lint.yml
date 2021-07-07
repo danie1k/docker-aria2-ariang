@@ -1,0 +1,63 @@
+---
+
+name: Lint
+
+'on':
+  create:
+  push:
+    branches: ['*']
+  workflow_dispatch:
+
+jobs:
+  hadolint:
+    name: Hadolint
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v2
+      - uses: hadolint/hadolint-action@v1.5.0
+        with:
+          dockerfile: Dockerfile
+
+  shellcheck:
+    name: Shellcheck
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v2
+      - uses: ludeeus/action-shellcheck@master
+
+  yamllint:
+    name: Yamllint
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v2
+      - uses: docker://pipelinecomponents/yamllint:latest
+        with:
+          args: yamllint .
+
+  trigger-build:
+    name: Trigger "Build Docker Image"
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    needs: [hadolint, shellcheck, yamllint]
+    steps:
+      - name: Get plain branch name
+        shell: bash
+        run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+        id: branch_name
+      - name: Repository Dispatch
+        uses: peter-evans/repository-dispatch@v1
+        with:
+          token: ${{ secrets.REPO_ACCESS_TOKEN }}
+          repository: danie1k/docker-aria2-ariang
+          event-type: build
+          client-payload: >-2
+            {
+            "ref": "${{ github.ref }}",
+            "sha": "${{ github.sha }}",
+            "is_tag": ${{ github.event.ref_type == 'tag' }},
+            "branch_name": "${{ steps.branch_name.outputs.branch }}",
+            "tag_name": "${{ github.event.ref }}"
+            }

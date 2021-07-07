@@ -1,6 +1,7 @@
-[![Docker Hub Build Status](https://img.shields.io/docker/cloud/build/danie1k/aria2-ariang)](https://hub.docker.com/repository/docker/danie1k/aria2-ariang)
+[![Lint](https://github.com/danie1k/docker-aria2-ariang/actions/workflows/lint.yml/badge.svg)](https://github.com/danie1k/docker-aria2-ariang/actions/workflows/lint.yml)
+[![Build Docker Image](https://github.com/danie1k/docker-aria2-ariang/actions/workflows/build-docker-image.yml/badge.svg)](https://github.com/danie1k/docker-aria2-ariang/actions/workflows/build-docker-image.yml)
 [![Docker Image Version](https://img.shields.io/docker/v/danie1k/aria2-ariang)](https://hub.docker.com/repository/docker/danie1k/aria2-ariang)
-[![MIT License](https://img.shields.io/github/license/danie1k/docker-aria2-ariang)](https://github.com/danie1k/docker-aria2-ariang/blob/master/LICENSE)
+[![GPL-3.0 License](https://img.shields.io/github/license/danie1k/docker-aria2-ariang)](https://github.com/danie1k/docker-aria2-ariang/blob/master/LICENSE)
 
 # Aria2 + AriaNG
 
@@ -51,7 +52,7 @@ Container can be configured using environment variables passed at runtime.
 
 ## License
 
-MIT
+[GPL-3.0](./LICENSE)
 
 
 [Alpine Linux container]: https://github.com/linuxserver/docker-baseimage-alpine
