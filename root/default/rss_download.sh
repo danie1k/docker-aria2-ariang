@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+set -e
+
 file=/config/rss_memory.txt
 
 if [ ! -e "${file}" ]; then

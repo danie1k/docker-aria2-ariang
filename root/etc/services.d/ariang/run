@@ -1,6 +1,12 @@
 #!/usr/bin/with-contenv sh
 
-exec s6-setuidgid abc /usr/bin/darkhttpd /ariang \
+exec 2>&1
+
+if [ -n "${AUTH}"]; then
+  auth="--auth ${AUTH}"
+fi
+
+exec s6-setuidgid abc /usr/bin/darkhttpd /ariang ${auth} \
   --addr 0.0.0.0 \
   --port 8080 \
   --log /dev/null \

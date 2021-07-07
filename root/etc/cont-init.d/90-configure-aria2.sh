@@ -1,4 +1,5 @@
 #!/usr/bin/with-contenv bash
+set -ex
 
 mkdir -p /config /download
 
