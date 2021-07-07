@@ -48,4 +48,4 @@ EXPOSE 6800 8080
 VOLUME /download /config
 
 
-RUN ["/init"]
+CMD ["/init"]
