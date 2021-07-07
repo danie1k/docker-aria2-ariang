@@ -2,10 +2,12 @@
 
 exec 2>&1
 
-if [ -n "${AUTH}"]; then
+# shellcheck disable=SC2153 disable=SC2154
+if [[ -n "${AUTH}" ]]; then
   auth="--auth ${AUTH}"
 fi
 
+# shellcheck disable=SC2086
 exec s6-setuidgid abc /usr/bin/darkhttpd /ariang ${auth} \
   --addr 0.0.0.0 \
   --port 8080 \

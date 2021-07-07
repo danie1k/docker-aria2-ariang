@@ -18,7 +18,7 @@ dockerize -no-overwrite -template /default/rss_feeds.txt:/config/rss_feeds.txt
 
 cat /config/aria2_ext.conf >> /config/aria2.conf
 
-if [ ! -f /config/aria2.session ]; then
+if [[ ! -f /config/aria2.session ]]; then
   touch /config/aria2.session
 fi
 
