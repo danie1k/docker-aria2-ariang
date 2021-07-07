@@ -30,13 +30,13 @@ Container can be configured using environment variables passed at runtime.
 | `aria2BtMinCryptoLevel`        | `bt-min-crypto-level`        | plain         |
 | `aria2BtRequireCrypto`         | `bt-require-crypto`          | false         |
 | `aria2BtSaveMetadata`          | `bt-save-metadata`           | false         |
+| `aria2ConsoleLogLevel`         | `console-log-level`          | warn          |
 | `aria2Continue`                | `continue`                   | false         |
 | `aria2DhtListenPort`           | `dht-listen-port`            | 6881-6999     |
 | `aria2DisableIpv6`             | `disable-ipv6`               | true          |
 | `aria2EnableDht`               | `enable-dht`                 | true          |
 | `aria2ForceSave`               | `force-save`                 | false         |
 | `aria2ListenPort`              | `listen-port`                | 6881-6999     |
-| `aria2LogLevel`                | `console-log-level`          | warn          |
 | `aria2LogLevel`                | `log-level`                  | warn          |
 | `aria2MaxConcurrentDownloads`  | `max-concurrent-downloads`   | 5             |
 | `aria2MaxConnectionPerServer`  | `max-connection-per-server`  | 1             |
