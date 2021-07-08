@@ -8,7 +8,7 @@ if [[ -n "${AUTH}" ]]; then
 fi
 
 # shellcheck disable=SC2086
-exec s6-setuidgid abc /usr/bin/darkhttpd /ariang ${auth} \
+exec s6-setuidgid abc /usr/bin/darkhttpd /app ${auth} \
   --addr 0.0.0.0 \
   --port 8080 \
   --log /dev/null \
