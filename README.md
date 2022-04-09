@@ -5,7 +5,7 @@
 
 # Aria2 + AriaNG
 
-[aria2] + [AriaNg] based on [Alpine Linux container] provided by [Linuxserver.io].
+[aria2] + [AriaNg] based on Alpine Linux container.
 
 
 ## Environment Variables
@@ -14,40 +14,41 @@ Container can be configured using environment variables passed at runtime.
 
 ### Container Parameters
 
-| Variable Name | Description                                                        |
-| ------------- | ------------------------------------------------------------------ |
-| `AUTH`        | Basic HTTP auth for AriaNG `username:password`, no auth by default |
-| `PUID`        | User ID - see below for explanation                                |
-| `PGID`        | Group ID - see below for explanation                               |
-| `TZ`          | A timezone to use                                                  |
-| `UMASK`       | Umask for running applications                                     |
+| Variable Name       | Description                                                        |
+|---------------------|--------------------------------------------------------------------|
+| `ARIA2_ARIANG_AUTH` | Basic HTTP auth for AriaNG `username:password`, no auth by default |
+| `ARIA2_ARIANG_PORT` | HTTP Port for AriaNG web server. Default: `8080`                   |
+| `PUID`              | User ID - see below for explanation                                |
+| `PGID`              | Group ID - see below for explanation                               |
+| `TZ`                | A timezone to use                                                  |
+| `UMASK`             | Umask for running applications                                     |
 
 ### Aria2 Parameters
 
-| Variable Name                  | [aria2c] option              | Default Value |
-| ------------------------------ | ---------------------------- | ------------- |
-| `aria2BtLoadSavedMetadata`     | `bt-load-saved-metadata`     | false         |
-| `aria2BtMinCryptoLevel`        | `bt-min-crypto-level`        | plain         |
-| `aria2BtRequireCrypto`         | `bt-require-crypto`          | false         |
-| `aria2BtSaveMetadata`          | `bt-save-metadata`           | false         |
-| `aria2ConsoleLogLevel`         | `console-log-level`          | warn          |
-| `aria2Continue`                | `continue`                   | false         |
-| `aria2DhtListenPort`           | `dht-listen-port`            | 6881-6999     |
-| `aria2DisableIpv6`             | `disable-ipv6`               | true          |
-| `aria2EnableDht`               | `enable-dht`                 | true          |
-| `aria2ForceSave`               | `force-save`                 | false         |
-| `aria2ListenPort`              | `listen-port`                | 6881-6999     |
-| `aria2LogLevel`                | `log-level`                  | warn          |
-| `aria2MaxConcurrentDownloads`  | `max-concurrent-downloads`   | 5             |
-| `aria2MaxConnectionPerServer`  | `max-connection-per-server`  | 1             |
-| `aria2MaxDownloadLimit`        | `max-download-limit`         | 0             |
-| `aria2MaxOverallDownloadLimit` | `max-overall-download-limit` | 0             |
-| `aria2MinSplitSize`            | `min-split-size`             | 20M           |
-| `aria2SaveSessionInterval`     | `save-session-interval`      | 0             |
-| `aria2Secret`                  | `rpc-secret`                 | 0hb!lly       |
-| `aria2SeedRatio`               | `seed-ratio`                 | 1.0           |
-| `aria2SeedTime`                | `seed-time`                  | 0             |
-| `aria2Split`                   | `split`                      | 5             |
+| Variable Name                   | [aria2c] option              | Default Value |
+|---------------------------------| ---------------------------- | ------------- |
+| `ARIA2_BtLoadSavedMetadata`     | `bt-load-saved-metadata`     | false         |
+| `ARIA2_BtMinCryptoLevel`        | `bt-min-crypto-level`        | plain         |
+| `ARIA2_BtRequireCrypto`         | `bt-require-crypto`          | false         |
+| `ARIA2_BtSaveMetadata`          | `bt-save-metadata`           | false         |
+| `ARIA2_ConsoleLogLevel`         | `console-log-level`          | warn          |
+| `ARIA2_Continue`                | `continue`                   | false         |
+| `ARIA2_DhtListenPort`           | `dht-listen-port`            | 6881-6999     |
+| `ARIA2_DisableIpv6`             | `disable-ipv6`               | true          |
+| `ARIA2_EnableDht`               | `enable-dht`                 | true          |
+| `ARIA2_ForceSave`               | `force-save`                 | false         |
+| `ARIA2_ListenPort`              | `listen-port`                | 6881-6999     |
+| `ARIA2_LogLevel`                | `log-level`                  | warn          |
+| `ARIA2_MaxConcurrentDownloads`  | `max-concurrent-downloads`   | 5             |
+| `ARIA2_MaxConnectionPerServer`  | `max-connection-per-server`  | 1             |
+| `ARIA2_MaxDownloadLimit`        | `max-download-limit`         | 0             |
+| `ARIA2_MaxOverallDownloadLimit` | `max-overall-download-limit` | 0             |
+| `ARIA2_MinSplitSize`            | `min-split-size`             | 20M           |
+| `ARIA2_SaveSessionInterval`     | `save-session-interval`      | 0             |
+| `ARIA2_Secret`                  | `rpc-secret`                 | 0hb!lly       |
+| `ARIA2_SeedRatio`               | `seed-ratio`                 | 1.0           |
+| `ARIA2_SeedTime`                | `seed-time`                  | 0             |
+| `ARIA2_Split`                   | `split`                      | 5             |
 
 
 ## License

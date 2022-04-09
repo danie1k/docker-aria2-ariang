@@ -3,13 +3,13 @@
 exec 2>&1
 
 # shellcheck disable=SC2153 disable=SC2154
-if [[ -n "${AUTH}" ]]; then
-  auth="--auth ${AUTH}"
+if [[ -n "${ARIA2_ARIANG_AUTH}" ]]; then
+  auth="--auth ${ARIA2_ARIANG_AUTH}"
 fi
 
 # shellcheck disable=SC2086
 exec s6-setuidgid abc /usr/bin/darkhttpd /app ${auth} \
   --addr 0.0.0.0 \
-  --port 8080 \
+  --port ${ARIA2_ARIANG_PORT:-8080} \
   --log /dev/null \
   --no-listing

@@ -1,5 +1,5 @@
 # Heavily inspired on https://github.com/linuxserver/docker-baseimage-alpine
-FROM alpine:3.14
+FROM alpine:3.15
 
 ARG BUILD_DATE
 ARG BUILD_REF
@@ -17,7 +17,7 @@ LABEL org.opencontainers.image.url="https://hub.docker.com/repository/docker/dan
 LABEL org.opencontainers.image.vendor="Daniel Kuruc"
 LABEL org.opencontainers.image.version="$BUILD_VERSION"
 
-ARG ARIANG_VERSION="1.2.2"
+ARG ARIANG_VERSION="1.2.3"
 ARG DOCKERIZE_VERSION="v0.6.1"
 ARG S6_OVERLAY_VERSION="v2.2.0.3"
 WORKDIR /tmp/
